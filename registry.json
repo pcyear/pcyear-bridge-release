@@ -1,0 +1,7 @@
+{
+  "name": "pcyear 的 SongLoft 插件",
+  "includes": [],
+  "plugins": [
+    "https://gitee.com/pcyear/pcyear-songloft-plugin/raw/master/plugin.json"
+  ]
+}
