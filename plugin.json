@@ -9,7 +9,7 @@
   "updateUrl": "https://gitee.com/pcyear/pcyear-songloft-plugin/raw/master/manifest.json",
   "entryPath": "multisource-music",
   "main": "main.js",
-  "icon": "icon.81be6f23.png",
+  "icon": "icon.png",
   "minHostVersion": "2.11.0",
   "permissions": [
     "storage",
