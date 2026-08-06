@@ -6,7 +6,7 @@ zip 来源（PLUGIN_SRC，默认同级源码仓的 plugin/songloft）：
   - 默认：脚本所在目录往上两级 + '../pcyear-bridge/plugin/songloft'
           （即与 pcyear-bridge-release 同级的 pcyear-bridge/plugin/songloft/dist）
   - 可用环境变量 PLUGIN_SRC 覆盖为任意插件源码/产物目录
-    （需含 dist/multisource-music.jsplugin.zip）
+    （需含 dist/pcyear-bridge.jsplugin.zip）
 
 部署目标（环境变量可覆盖）：
   DEPLOY_HOST  必填（不内置默认）
@@ -23,12 +23,12 @@ import urllib.request, urllib.parse, json, os, ssl, sys, time
 HOST = os.environ.get('DEPLOY_HOST', 'https://<宿主地址>:<端口>')
 USER = os.environ.get('DEPLOY_USER')
 PASS = os.environ.get('DEPLOY_PASS')
-BASE = '/api/v1/jsplugin/multisource-music'
+BASE = '/api/v1/jsplugin/pcyear-bridge'
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 DEFAULT_SRC = os.path.normpath(os.path.join(HERE, '..', '..', 'pcyear-bridge', 'plugin', 'songloft'))
 PLUGIN_SRC = os.environ.get('PLUGIN_SRC') or DEFAULT_SRC
-ZIP = os.path.join(PLUGIN_SRC, 'dist', 'multisource-music.jsplugin.zip')
+ZIP = os.path.join(PLUGIN_SRC, 'dist', 'pcyear-bridge.jsplugin.zip')
 
 CTX = ssl.create_default_context(); CTX.check_hostname=False; CTX.verify_mode=ssl.CERT_NONE
 TOKEN=None
@@ -66,7 +66,7 @@ print('ZIP        =', ZIP)
 if not os.path.isfile(ZIP):
     print('!! 找不到 zip：', ZIP)
     print('   请先构建插件（在源码仓 pcyear-bridge/plugin/songloft 执行 npm run build），')
-    print('   或用环境变量 PLUGIN_SRC 指向含 dist/multisource-music.jsplugin.zip 的目录。')
+    print('   或用环境变量 PLUGIN_SRC 指向含 dist/pcyear-bridge.jsplugin.zip 的目录。')
     sys.exit(1)
 
 print('== login ==')
@@ -77,7 +77,7 @@ TOKEN=json.loads(b)['access_token']
 
 print('== upload ==')
 with open(ZIP,'rb') as f: content=f.read()
-s,ub=req('/api/v1/jsplugins/upload',files=[('file','multisource-music.jsplugin.zip','application/zip',content)])
+s,ub=req('/api/v1/jsplugins/upload',files=[('file','pcyear-bridge.jsplugin.zip','application/zip',content)])
 print('upload',s,ub[:300])
 
 pid=None
@@ -85,14 +85,14 @@ try:
     upj=json.loads(ub); results=upj.get('results',[]) if isinstance(upj,dict) else []
     for r in results:
         pl=r.get('plugin') if isinstance(r,dict) else None
-        if pl and (pl.get('entryPath') or pl.get('entry_path'))=='multisource-music': pid=pl.get('id'); break
+        if pl and (pl.get('entryPath') or pl.get('entry_path'))=='pcyear-bridge': pid=pl.get('id'); break
 except Exception as e: print('parse',e)
 if pid is None:
     try:
         s,b=req('/api/v1/jsplugins'); j=json.loads(b); arr=j.get('data',j) if isinstance(j,dict) else j
         if isinstance(arr,dict): arr=list(arr.values())
         for pl in arr:
-            if isinstance(pl,dict) and (pl.get('entryPath') or pl.get('entry_path'))=='multisource-music': pid=pl.get('id'); break
+            if isinstance(pl,dict) and (pl.get('entryPath') or pl.get('entry_path'))=='pcyear-bridge': pid=pl.get('id'); break
     except Exception as e: print('list',e)
 print('plugin id =',pid)
 if pid is None: print('!! 未确定 plugin id，跳过重载'); sys.exit(1)

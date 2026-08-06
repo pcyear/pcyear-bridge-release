@@ -5,7 +5,7 @@
 - `plugin.json` — 插件元信息（含 `updateUrl` → manifest.json）
 - `manifest.json` — 版本 + 安装包下载地址
 - `registry.json` — 自有订阅源入口
-- `dist/multisource-music.jsplugin.zip` — 安装包
+- `dist/pcyear-bridge.jsplugin.zip` — 安装包
 
 ## 使用
 
@@ -20,8 +20,8 @@ https://gitee.com/pcyear/pcyear-bridge-release/raw/master/plugin/songloft/regist
 
 ## 发布新版本
 
-1. 在源码仓 `pcyear-bridge/plugin/songloft/` 重新构建插件（`npm run build`），得到 `dist/multisource-music.jsplugin.zip`
-2. 把新 zip 覆盖到本目录 `dist/multisource-music.jsplugin.zip`
+1. 在源码仓 `pcyear-bridge/plugin/songloft/` 重新构建插件（`npm run build`），得到 `dist/pcyear-bridge.jsplugin.zip`
+2. 把新 zip 覆盖到本目录 `dist/pcyear-bridge.jsplugin.zip`
 3. 更新本目录 `plugin.json` 的 `version`、`manifest.json` 的 `version`
 4. commit + push 本仓库（`pcyear-bridge-release`）
 
