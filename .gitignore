@@ -1,0 +1,7 @@
+# 沙箱重命名遗留的冗余根级副本（可安全删除，本机执行 `git clean -fd` 移除）：
+# 插件发布产物的规范位置为 plugin/songloft/，根级这些文件系从旧仓名 pcyear-songloft-publish 拷贝遗留。
+/dist/
+/manifest.json
+/plugin.json
+/registry.json
+/static/

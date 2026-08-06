@@ -1,22 +1,21 @@
-# pcyear 的 SongLoft 插件发布源
+# pcyear-bridge-release
 
-本仓库仅存放「多源音乐桥」插件的发布产物（源码不在此），供 SongLoft 商店/订阅源拉取。
-
-- `plugin.json` — 插件元信息（含 `updateUrl` → manifest.json）
-- `manifest.json` — 版本 + 安装包下载地址
-- `registry.json` — 自有订阅源入口
-- `dist/multisource-music.jsplugin.zip` — 安装包
-
-## 使用
-
-在 SongLoft「插件商店 → 管理订阅源」添加：
+「多源音乐桥」(pcyear-bridge) 的**发布/发行仓库**，与源码仓 `pcyear-bridge` 分离，只放产物、不放源码。
 
 ```
-https://gitee.com/pcyear/pcyear-songloft-plugin/raw/master/registry.json
+pcyear-bridge-release/
+├── app/                 # App 各平台发行产物：apk、安装包、打包配置（当前占位，待接入构建）
+└── plugin/
+    └── songloft/        # 曲库插件发布目录：打包产物 + 部署脚本
+        ├── dist/multisource-music.jsplugin.zip
+        ├── plugin.json / manifest.json / registry.json
+        ├── static/      # 图标等静态资源
+        └── deploy_remote.py   # 远程一键部署脚本
 ```
 
-## 发布新版本
+- 插件发布说明见 [`plugin/songloft/README.md`](./plugin/songloft/README.md)
+- 源码与构建见源码仓 `pcyear-bridge/plugin/songloft/`
 
-1. 重新构建插件，把新 zip 覆盖到 `dist/multisource-music.jsplugin.zip`
-2. 更新 `plugin.json` 的 `version`、`manifest.json` 的 `version`
-3. commit + push 本仓库
+> 本仓库由旧 `pcyear-songloft-plugin`（发布仓）演化而来，目录规范化到 `plugin/songloft/` 下。
+> 若从旧订阅源迁移，请把 SongLoft 订阅源地址更新为
+> `https://gitee.com/pcyear/pcyear-bridge-release/raw/master/plugin/songloft/registry.json`。
