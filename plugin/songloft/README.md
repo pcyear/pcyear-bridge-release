@@ -27,13 +27,13 @@ https://gitee.com/pcyear/pcyear-bridge-release/raw/master/plugin/songloft/regist
 
 ## 远程部署
 
-`deploy_remote.py` 可一键上传并热重载到远程 SongLoft（默认 `<宿主地址>:<端口>`）：
+`deploy_remote.py` 可一键上传并热重载到远程 SongLoft（宿主地址与登录凭据一律通过环境变量传入）：
 
 ```bash
 # 默认从同级源码仓 pcyear-bridge/plugin/songloft/dist 取 zip
 python plugin/songloft/deploy_remote.py
 # 或显式指定源码仓 / 产物目录
 PLUGIN_SRC=/path/to/pcyear-bridge/plugin/songloft python plugin/songloft/deploy_remote.py
-# 部署到本机 SongLoft
+# 部署到任意宿主（凭据一律用环境变量传入，脚本不内置默认值）
 DEPLOY_HOST=http://<宿主地址>:<端口> DEPLOY_USER=<账号> DEPLOY_PASS=<密码> python plugin/songloft/deploy_remote.py
 ```

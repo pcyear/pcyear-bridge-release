@@ -8,21 +8,20 @@ zip 来源（PLUGIN_SRC，默认同级源码仓的 plugin/songloft）：
   - 可用环境变量 PLUGIN_SRC 覆盖为任意插件源码/产物目录
     （需含 dist/multisource-music.jsplugin.zip）
 
-部署目标（环境变量可覆盖）：
-  DEPLOY_HOST  必填（不内置默认）
-  DEPLOY_USER  必填（不内置默认）
-  DEPLOY_PASS  必填（不内置默认）
+部署目标（环境变量必填，脚本不内置任何默认凭据）：
+  DEPLOY_HOST  宿主地址（必填，如 https://music.example.com:1024）
+  DEPLOY_USER  登录账号（必填）
+  DEPLOY_PASS  登录密码（必填）
 
 用法：
   python plugin/songloft/deploy_remote.py
-  PLUGIN_SRC=/abs/path/to/plugin python plugin/songloft/deploy_remote.py
   DEPLOY_HOST=https://host:1024 DEPLOY_USER=user DEPLOY_PASS=pass python plugin/songloft/deploy_remote.py
 """
 import urllib.request, urllib.parse, json, os, ssl, sys, time
 
-HOST = os.environ.get('DEPLOY_HOST', 'https://<宿主地址>:<端口>')
-USER = os.environ.get('DEPLOY_USER')
-PASS = os.environ.get('DEPLOY_PASS')
+HOST = os.environ.get('DEPLOY_HOST') or ''
+USER = os.environ.get('DEPLOY_USER') or ''
+PASS = os.environ.get('DEPLOY_PASS') or ''
 BASE = '/api/v1/jsplugin/multisource-music'
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -61,6 +60,10 @@ def req(p, data=None, method=None, raw=False, headers=None, files=None, timeout=
         return -1,repr(e)[:300]
 
 print('== 准备 zip ==')
+if not HOST or not USER or not PASS:
+    print('!! 缺少部署凭据：请通过环境变量传入 DEPLOY_HOST / DEPLOY_USER / DEPLOY_PASS')
+    print('   例如：DEPLOY_HOST=https://host:1024 DEPLOY_USER=user DEPLOY_PASS=pass python plugin/songloft/deploy_remote.py')
+    sys.exit(1)
 print('PLUGIN_SRC =', PLUGIN_SRC)
 print('ZIP        =', ZIP)
 if not os.path.isfile(ZIP):
