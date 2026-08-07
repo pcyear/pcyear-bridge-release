@@ -7,9 +7,9 @@
   "license": "MIT",
   "homepage": "https://gitee.com/pcyear/pcyear-bridge-release",
   "updateUrl": "https://gitee.com/pcyear/pcyear-bridge-release/raw/master/plugin/songloft/manifest.json",
-  "entryPath": "pcyear-bridge",
-  "main": "main.js",
-  "icon": "icon.png",
+  "entryPath": "multisource-music",
+  "main": "main.jsc",
+  "icon": "icon.81be6f23.png",
   "minHostVersion": "2.11.0",
   "permissions": [
     "storage",
@@ -30,6 +30,6 @@
     "/api",
     "/rest"
   ],
-  "entryHash": "",
-  "zipHash": ""
+  "entryHash": "f682088cfd586540639feb43ffd68dbd82a1da6f84c54093ad1792f889a330d0",
+  "zipHash": "6073b8c412872671cfe4b3373b29ba1d12e928c19409d944391fe561632acb57"
 }
