@@ -1,7 +1,7 @@
-﻿{
-  "name": "澶氭簮闊充箰妗?,
+{
+  "name": "多源音乐桥",
   "version": "1.4.53",
-  "description": "澶氭簮闊充箰妗ワ細鎶婇鐗涢煶涔愩€乄ebDAV銆丼ubsonic/Navidrome 缁熶竴鎺ュ叆 SongLoft锛屾彁渚涚粺涓€娴忚銆佹悳绱€佹挱鏀俱€佹敹钘忋€佹壒閲忓叆搴擄紝鏀寔鎶栭煶鏂瑰紡鍒囧壊銆侀€愬瓧姝岃瘝/妗岄潰姝岃瘝銆佹櫤鑳介煶绠辨姇鏀剧瓑銆?,
+  "description": "多源音乐桥：把飞牛音乐、WebDAV、Subsonic/Navidrome 统一接入 SongLoft，提供统一浏览、搜索、播放、收藏、批量入库，支持抖音方式切割、逐字歌词/桌面歌词、智能音箱投放等。",
   "author": "pcyear",
   "authorUrl": "https://www.035151.xyz/?ref=4",
   "license": "MIT",
