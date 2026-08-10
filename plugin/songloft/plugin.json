@@ -1,11 +1,11 @@
-{
-  "name": "多源音乐桥",
-  "version": "1.4.52",
-  "description": "多源音乐桥：把飞牛音乐、WebDAV、Subsonic/Navidrome 统一接入 SongLoft，提供统一浏览、搜索、播放、收藏、批量入库，支持抖音方式切割、逐字歌词/桌面歌词、智能音箱投放等。",
+﻿{
+  "name": "澶氭簮闊充箰妗?,
+  "version": "1.4.53",
+  "description": "澶氭簮闊充箰妗ワ細鎶婇鐗涢煶涔愩€乄ebDAV銆丼ubsonic/Navidrome 缁熶竴鎺ュ叆 SongLoft锛屾彁渚涚粺涓€娴忚銆佹悳绱€佹挱鏀俱€佹敹钘忋€佹壒閲忓叆搴擄紝鏀寔鎶栭煶鏂瑰紡鍒囧壊銆侀€愬瓧姝岃瘝/妗岄潰姝岃瘝銆佹櫤鑳介煶绠辨姇鏀剧瓑銆?,
   "author": "pcyear",
   "authorUrl": "https://www.035151.xyz/?ref=4",
   "license": "MIT",
-  "homepage": "https://gitee.com/pcyear/pcyear-bridge-release",
+  "homepage": "https://gitee.com/pcyear/pcyear-bridge",
   "updateUrl": "https://gitee.com/pcyear/pcyear-bridge-release/raw/master/plugin/songloft/manifest.json",
   "entryPath": "multisource-music",
   "main": "main.jsc",
@@ -19,7 +19,8 @@
     "playlists.write",
     "fs:music",
     "fs",
-    "inter-plugin"
+    "inter-plugin",
+    "fs:external"
   ],
   "publicPaths": [
     "/cover-img",
@@ -28,8 +29,22 @@
     "/lyric-search",
     "/debug-art",
     "/api",
-    "/rest"
+    "/rest",
+    "/stream"
   ],
-  "entryHash": "f682088cfd586540639feb43ffd68dbd82a1da6f84c54093ad1792f889a330d0",
-  "zipHash": "6073b8c412872671cfe4b3373b29ba1d12e928c19409d944391fe561632acb57"
+  "entryHash": "3afb8bae8a928b7de2ee6246efa9adbe2a477f8c7a9115ee5914f10e187383f4",
+  "zipHash": "5c56aa30cb7348e91239f43941882245fcde9807c0f4b3b74f16669bffa5e6b8",
+  "externalPaths": [
+    "/app/audiobook"
+  ],
+  "public_paths": [
+    "/cover-img",
+    "/cover-data",
+    "/cover-search",
+    "/lyric-search",
+    "/debug-art",
+    "/api",
+    "/rest",
+    "/stream"
+  ]
 }
