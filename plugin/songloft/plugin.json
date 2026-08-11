@@ -1,6 +1,6 @@
 {
   "name": "多源音乐桥",
-  "version": "1.4.53.1",
+  "version": "1.4.53.2",
   "description": "多源音乐桥：把飞牛音乐、WebDAV、Subsonic/Navidrome 统一接入 SongLoft，提供统一浏览、搜索、播放、收藏、批量入库，支持抖音方式切割、逐字歌词/桌面歌词、智能音箱投放等。",
   "author": "pcyear",
   "authorUrl": "https://www.035151.xyz/?ref=4",
@@ -32,8 +32,8 @@
     "/rest",
     "/stream"
   ],
-  "entryHash": "b5687fbc49b01ee045435fcc2825681bf5a65f14676f6e57868e8213fde17bad",
-  "zipHash": "6db095ea1f986789d54d3f1aa5c9a69324e6e94fac413c8553a7828816ab31c0",
+  "entryHash": "29dc354226159a1d13e3661230e72636df3a023a635555a96472c081d6737805",
+  "zipHash": "fd36303fdc87fa6ec557ed955a6762e6ee92074b5d057655de7ce9109280f4eb",
   "externalPaths": [
     "/app/audiobook"
   ],
