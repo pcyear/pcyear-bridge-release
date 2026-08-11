@@ -32,8 +32,8 @@
     "/rest",
     "/stream"
   ],
-  "entryHash": "b11e1999ab923ccd0df74412350704249d95733fb61ef4a439b88a6e2dee232d",
-  "zipHash": "17592ec145b71245647aa1d62d89fb7322479af8a5478cf7c2e56eb6c97cc6a0",
+  "entryHash": "b791ddf763a54eaefebb013fdc8ba8782553374fa7cc19740c332892c4b86f2e",
+  "zipHash": "0557337909e4c69bdaa692f7570ace0893474cefc722dc9f7139684f53153920",
   "externalPaths": [
     "/app/audiobook"
   ],
