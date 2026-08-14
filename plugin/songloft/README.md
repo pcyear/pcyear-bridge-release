@@ -12,7 +12,7 @@
 在 SongLoft「插件商店 → 管理订阅源」添加：
 
 ```
-https://github.com/pcyear/pcyear-bridge-release/raw/master/plugin/songloft/registry.json
+https://raw.githubusercontent.com/pcyear/pcyear-bridge-release/master/plugin/songloft/registry.json
 ```
 
 > ⚠️ 仓库已由 `pcyear-songloft-plugin` 重命名为 `pcyear-bridge-release`，且发布物已从根目录移入 `plugin/songloft/`。

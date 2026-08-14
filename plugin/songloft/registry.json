@@ -2,6 +2,6 @@
   "name": "pcyear 的 SongLoft 插件",
   "includes": [],
   "plugins": [
-    "https://github.com/pcyear/pcyear-bridge-release/raw/master/plugin/songloft/plugin.json"
+    "https://raw.githubusercontent.com/pcyear/pcyear-bridge-release/master/plugin/songloft/plugin.json"
   ]
 }
