@@ -18,4 +18,4 @@ pcyear-bridge-release/
 
 > 本仓库由旧 `pcyear-songloft-plugin`（发布仓）演化而来，目录规范化到 `plugin/songloft/` 下。
 > 若从旧订阅源迁移，请把 SongLoft 订阅源地址更新为
-> `https://gitee.com/pcyear/pcyear-bridge-release/raw/master/plugin/songloft/registry.json`。
+> `https://raw.githubusercontent.com/pcyear/pcyear-bridge-release/master/plugin/songloft/registry.json`。

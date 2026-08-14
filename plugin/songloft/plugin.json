@@ -5,7 +5,7 @@
   "author": "pcyear",
   "authorUrl": "https://www.035151.xyz/?ref=4",
   "license": "MIT",
-  "homepage": "https://gitee.com/pcyear/pcyear-bridge",
+  "homepage": "https://github.com/pcyear/pcyear-bridge-release",
   "updateUrl": "https://raw.githubusercontent.com/pcyear/pcyear-bridge-release/master/plugin/songloft/manifest.json",
   "entryPath": "multisource-music",
   "main": "main.jsc",
