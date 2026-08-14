@@ -12,11 +12,11 @@
 在 SongLoft「插件商店 → 管理订阅源」添加：
 
 ```
-https://gitee.com/pcyear/pcyear-bridge-release/raw/master/plugin/songloft/registry.json
+https://github.com/pcyear/pcyear-bridge-release/raw/master/plugin/songloft/registry.json
 ```
 
 > ⚠️ 仓库已由 `pcyear-songloft-plugin` 重命名为 `pcyear-bridge-release`，且发布物已从根目录移入 `plugin/songloft/`。
-> 若尚未在 Gitee 完成对应仓库重命名，请先将 Gitee 仓库改名为 `pcyear-bridge-release`，并同步更新本目录 `plugin.json` 中的 `updateUrl` / `homepage`。
+> 若尚未在 GitHub 完成对应仓库重命名，请先将 GitHub 仓库改名为 `pcyear-bridge-release`，并同步更新本目录 `plugin.json` 中的 `updateUrl` / `homepage`。
 
 ## 发布新版本
 
