@@ -1,0 +1,44 @@
+name: Auto Tag & Release
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: 拉取完整代码
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: 读取 plugin.json 内版本号
+        id: get_version
+        run: |
+          VERSION=$(jq -r '.version' ./plugin/songloft/plugin.json)
+          echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
+
+      - name: 检测Tag是否存在，不存在则创建Tag
+        id: check_tag
+        env:
+          VER: ${{ steps.get_version.outputs.VERSION }}
+        run: |
+          TAG_NAME="v${VER}"
+          if ! git rev-parse "tags/$TAG_NAME" >/dev/null 2>&1; then
+            git tag "$TAG_NAME"
+            git push origin "$TAG_NAME"
+            echo "NEW_TAG=true" >> $GITHUB_OUTPUT
+          else
+            echo "NEW_TAG=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: 自动创建Release并上传打包文件
+        if: steps.check_tag.outputs.NEW_TAG == 'true'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ steps.get_version.outputs.VERSION }}
+          name: Release v${{ steps.get_version.outputs.VERSION }}
+          generate_release_notes: true
+          files: ./plugin/songloft/dist/*
